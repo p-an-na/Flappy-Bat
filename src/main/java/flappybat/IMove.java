@@ -2,9 +2,9 @@ package flappybat;
 
 public interface IMove {
 
-	public void move(int units);
-	public void moveUp();
-	public void moveDown();
+
+	public void moveUp(int units);
+	public void moveDown(int units);
 	public void position();
 	
 	

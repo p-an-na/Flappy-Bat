@@ -23,6 +23,11 @@ public static void main(String[] args) throws IOException {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
 		window.pack();
+		
+		Bat b1 = new Bat ("Nietoperek", -5, 5);
+		
+		b1.moveUp(2);
+		b1.moveDown(2);
 	}
 }
 
