@@ -23,15 +23,16 @@ public class GamePanel extends JPanel {
 	
 	
 	Bat b1 = new Bat ("Nietoperek", -5, 5);
-	
+
 	class ActionOnButtons implements MouseListener {
 	
 	
 	// klikniêcie na nietoperka idzie do gory
 	public void mouseClicked(MouseEvent e) {
-		b1.moveUp(50);	
 		
-		
+		b1.moveUp(50);
+		//dopisaæ zmianê miejsca nietoperka
+		repaint();
 	}
 
 	public void mouseEntered(MouseEvent e) {
@@ -41,6 +42,7 @@ public class GamePanel extends JPanel {
 	}
 
 	public void mousePressed(MouseEvent e) {
+		
 	}
 	// po klikniêciu spada w dó³
 	public void mouseReleased(MouseEvent e) {
@@ -63,9 +65,9 @@ public class GamePanel extends JPanel {
 	textTitle.setBounds(240, 100, 350, 60);
 	add(textTitle);
 //nietoperek jako przycisk
-	BufferedImage buttonIcon = ImageIO.read(new File ("C:/Users/anpie/eclipse-workspace2/Flappy-bat/src/main/resources/netoperek1.png"));
+	BufferedImage buttonIcon = ImageIO.read(new File ("src/main/resources/netoperek1.png"));
     JButton batButton = new JButton(new ImageIcon(buttonIcon));
-    batButton.add(b1);
+    //batButton.add(b1);
     batButton.setBorderPainted(false);
     batButton.setFocusPainted(false);
     batButton.setContentAreaFilled(false);
@@ -92,7 +94,7 @@ public Dimension getPreferredSize() {
 @Override
 protected void paintComponent( Graphics g ){
 super.paintComponent( g );
-Image im = getToolkit().getImage("C:/Users/anpie/eclipse-workspace2/Flappy-bat/src/main/resources/flappybattlo.png");
+Image im = getToolkit().getImage("src/main/resources/flappybattlo.png");
 g.drawImage( im, 0, 0, this );
 }
 
