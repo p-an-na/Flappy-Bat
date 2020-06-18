@@ -14,7 +14,7 @@ public static void main(String[] args) throws IOException {
 		
 		GamePanel panel = new GamePanel();
 		
-		ImageIcon img = new ImageIcon("C:/Users/anpie/eclipse-workspace2/Flappy-bat/src/main/resources/netoperek1.png");
+		ImageIcon img = new ImageIcon("src/main/resources/netoperek1.png");
 		window.setIconImage(img.getImage());
 		
 		window.add(panel);
