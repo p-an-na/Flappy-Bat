@@ -62,7 +62,7 @@ public class GamePanel extends JPanel {
 	textTitle.setFont(new Font ("Snap ITC", Font.BOLD, 28 ));
 	Color c = new Color(51,0,102);
 	textTitle.setForeground(c);
-	textTitle.setBounds(240, 100, 350, 60);
+	textTitle.setBounds(160, 100, 350, 60);
 	add(textTitle);
 //nietoperek jako przycisk
 	BufferedImage buttonIcon = ImageIO.read(new File ("src/main/resources/netoperek1.png"));
@@ -71,14 +71,14 @@ public class GamePanel extends JPanel {
     batButton.setBorderPainted(false);
     batButton.setFocusPainted(false);
     batButton.setContentAreaFilled(false);
-    batButton.setBounds(300, 280, 100, 30);
+    batButton.setBounds(200, 280, 100, 30);
     batButton.addMouseListener(new ActionOnButtons());
 	add(batButton);
 	//instrukcja startu gry
 	JLabel textStart = new JLabel("Tap on the Bat to START");
 	textStart.setFont(new Font ("Snap ITC", Font.BOLD, 20 ));
 	textStart.setForeground(c);
-	textStart.setBounds(180, 400, 400, 40);
+	textStart.setBounds(100, 400, 400, 40);
 	add(textStart);
 
 //klikanie na nietoperka
@@ -88,7 +88,7 @@ public class GamePanel extends JPanel {
 	
 @Override
 public Dimension getPreferredSize() {
-	return new Dimension(700, 700);
+	return new Dimension(480, 660);
 }
 //dodanie t³a
 @Override
