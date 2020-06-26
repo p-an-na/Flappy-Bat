@@ -1,49 +1,56 @@
 package flappybat;
 
-import java.awt.Component;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-//porusza siê do góry, przy naciœniêciu na niego plansza siê przesuwa do przodu i wyskakuj¹ kolejne przeszkody. Nie naciskamy myszk¹ spada w dó³
-public class Bat  extends Component implements IMove {
-	private String name;
-	private int xAxis;
-	private int yAxis;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
-	
-	private int dx;
-	private int dy;
-	
-	public Bat(String name, int Xaxis, int Yaxis) {
-		this.name = name;
-		this.xAxis = xAxis;
-		this.yAxis = yAxis;
-		this.dx = 3;
-		this.dy = 3;
-	}
+public class Bat extends JLabel{
 
-	@Override
-	public String toString() {
-		return "Bat [name=" + name + ", polozenieNaOsiX=" + xAxis + ", polozenieNaOsiY="
-				+ yAxis + "]";
-	}
+	 private int x;
+	 private int y;
+	 private int wysokosc = 30;
+	 
+	ImageIcon img = new ImageIcon("src/main/resources/netoperek1.png"); //obrazek nietoperza
 
+	public Bat(int x, int y) throws IOException{
+	    	
+	this.setX(x);
+	this.setY(y);
+	setIcon(img);
+	setOpaque(false);
+	setBounds(x, y, 200, 30);
+	       
+	    }
 
-	public void moveUp(int units) {
-		xAxis -= units * dx;
-		yAxis += units * dy;
-		
-	}
+	    @Override
+	    public int getX() {
+	        return x;
+	    }
 
-	public void moveDown(int units) {
-		xAxis += units * dx;
-		yAxis -= units * dy;
-		
-	}
+	    public void setX(int x) {
+	        this.x = x;
+	    }
 
-	public void position() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
+	    @Override
+	    public int getY() {
+	        return y;
+	    }
+
+	    public void setY(int y) {
+	        this.y = y;
+	    }
+
+	    public int getWysokosc() {
+	        return wysokosc;
+	    }
+
+	    public void setWysokosc(int wysokosc) {
+	        this.wysokosc = wysokosc;
+	    }
 }
-

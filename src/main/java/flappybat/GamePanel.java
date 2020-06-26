@@ -19,43 +19,22 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GamePanel extends JPanel {
+public class GamePanel extends JPanel implements MouseListener {
 	
-	
-	Bat b1 = new Bat ("Nietoperek", -5, 5);
+    Bat bat = new Bat(300, 300);
+   // private int x, y;
+    
+    Pipes pipe = new Pipes (200,200);
+ //   private int x, y;
 
-	class ActionOnButtons implements MouseListener {
 	
-	
-	// klikniêcie na nietoperka idzie do gory
-	public void mouseClicked(MouseEvent e) {
-		
-		b1.moveUp(50);
-		//dopisaæ zmianê miejsca nietoperka
-		repaint();
-	}
-
-	public void mouseEntered(MouseEvent e) {
-	}
-
-	public void mouseExited(MouseEvent e) {
-	}
-
-	public void mousePressed(MouseEvent e) {
-		
-	}
-	// po klikniêciu spada w dó³
-	public void mouseReleased(MouseEvent e) {
-		b1.moveDown(50);
-		
-	}
-	
-	}
-	
-	
-	public GamePanel() throws IOException {
+public GamePanel() throws IOException {
 		
 	setLayout(null);
+	addMouseListener(this);
+	setFocusable(true);
+	add(bat);
+	add(pipe);
 	
 //g³owny napis nazwy gry
 	JLabel textTitle = new JLabel("Flappy Bat");
@@ -64,27 +43,44 @@ public class GamePanel extends JPanel {
 	textTitle.setForeground(c);
 	textTitle.setBounds(160, 100, 350, 60);
 	add(textTitle);
-//nietoperek jako przycisk
-	BufferedImage buttonIcon = ImageIO.read(new File ("src/main/resources/netoperek1.png"));
-    JButton batButton = new JButton(new ImageIcon(buttonIcon));
-    //batButton.add(b1);
-    batButton.setBorderPainted(false);
-    batButton.setFocusPainted(false);
-    batButton.setContentAreaFilled(false);
-    batButton.setBounds(200, 280, 100, 30);
-    batButton.addMouseListener(new ActionOnButtons());
-	add(batButton);
-	//instrukcja startu gry
+
+//instrukcja startu gry
 	JLabel textStart = new JLabel("Tap on the Bat to START");
 	textStart.setFont(new Font ("Snap ITC", Font.BOLD, 20 ));
 	textStart.setForeground(c);
 	textStart.setBounds(100, 400, 400, 40);
 	add(textStart);
 
-//klikanie na nietoperka
-  batButton.addMouseListener(new ActionOnButtons());
+
 	}
 	
+	public void mouseClicked(MouseEvent arg0) {
+		 bat.setY(bat.getY() - bat.getWysokosc());
+	        repaint();
+		
+	}
+
+
+	public void mouseEntered(MouseEvent arg0) {
+
+	}
+
+
+	public void mouseExited(MouseEvent arg0) {
+
+	}
+
+
+	public void mousePressed(MouseEvent arg0) {
+		
+	}
+
+
+	public void mouseReleased(MouseEvent arg0) { //trzeba dodaæ grawitacjê
+	//	bat.setY(bat.getY() + bat.getWysokosc());
+       //    repaint();
+		
+	}
 	
 @Override
 public Dimension getPreferredSize() {
