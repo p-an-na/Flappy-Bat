@@ -1,5 +1,6 @@
 package flappybat;
 
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
@@ -19,9 +20,10 @@ public static void main(String[] args) throws IOException {
 		
 		window.add(panel);
 		window.setLocation(200, 100);
-		window.setSize(350,640);
+		window.setPreferredSize(new Dimension(500,640));
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
+		window.setResizable(false);
 		window.pack();
 		
 

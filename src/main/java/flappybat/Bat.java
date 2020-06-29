@@ -24,7 +24,7 @@ public class Bat extends JLabel{
 	this.setY(y);
 	setIcon(img);
 	setOpaque(false);
-	setBounds(x, y, 200, 30);
+	setBounds(x, y, 60, 60);
 	       
 	    }
 

@@ -24,7 +24,7 @@ public class Pipes extends JLabel {
 		this.setY(y);
 		setIcon(img);
 		setOpaque(false);
-		setBounds(x, y, 75, 500);
+		setBounds(x, y, 75, 400);
 		
 	}
 	// sprawdzanie czy jest kolizja nietoperza z rur¹
